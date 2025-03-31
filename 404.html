@@ -8,52 +8,70 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div id="app">
-        <!-- Content will be dynamically loaded here -->
-    </div>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="CyberShield UK Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/CyberShield-UK/">Home</a></li>
+                <li><a href="/CyberShield-UK/services">Services</a></li>
+                <li><a href="/CyberShield-UK/about">About</a></li>
+                <li><a href="/CyberShield-UK/contact">Contact</a></li>
+                <li><a href="/CyberShield-UK/onboarding" class="cta-button">Get Started</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <h1>404 - Page Not Found</h1>
+            <p>The page you're looking for doesn't exist.</p>
+            <a href="/CyberShield-UK/" class="btn">Return to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CyberShield UK</h3>
+                <p>Providing managed security services to protect your business from cyber threats.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/CyberShield-UK/">Home</a></li>
+                    <li><a href="/CyberShield-UK/about">About</a></li>
+                    <li><a href="/CyberShield-UK/services">Services</a></li>
+                    <li><a href="/CyberShield-UK/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Security Street</p>
+                <p>London, UK</p>
+                <p>+44 20 1234 5678</p>
+                <p>info@cybershielduk.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberShield UK. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
-        // Get the requested path from the URL
-        const path = window.location.pathname;
-        
-        // Remove the repository name from the path if it exists
-        const repoName = '/cybershield-uk'; // Update this with your repository name
-        const cleanPath = path.replace(repoName, '');
-        
-        // Map paths to HTML files
-        const pathMap = {
-            '/': 'index.html',
-            '/services': 'services.html',
-            '/about': 'about.html',
-            '/contact': 'contact.html',
-            '/onboarding': 'onboarding.html',
-            '/remediation-dashboard': 'remediation-dashboard.html'
-        };
-
-        // Get the corresponding HTML file
-        const targetFile = pathMap[cleanPath] || 'index.html';
-
-        // Fetch and load the content
-        fetch(targetFile)
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('app').innerHTML = html;
-                
-                // Reinitialize any necessary scripts
-                if (typeof initializeApp === 'function') {
-                    initializeApp();
-                }
-            })
-            .catch(error => {
-                console.error('Error loading page:', error);
-                document.getElementById('app').innerHTML = `
-                    <div class="error-container">
-                        <h1>404 - Page Not Found</h1>
-                        <p>The page you're looking for doesn't exist.</p>
-                        <a href="/" class="btn">Return to Home</a>
-                    </div>
-                `;
+        // Handle mobile menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
             });
+        });
     </script>
 </body>
 </html> 

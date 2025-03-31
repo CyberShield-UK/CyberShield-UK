@@ -9,7 +9,7 @@ class Router {
             '/remediation-dashboard': 'remediation-dashboard.html'
         };
         
-        this.repoName = '/cybershield-uk'; // Update this with your repository name
+        this.repoName = '/CyberShield-UK'; // Updated to match the actual repository name
         
         // Handle navigation
         window.addEventListener('popstate', () => this.handleRoute());
