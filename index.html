@@ -9,19 +9,17 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav>
             <div class="logo">
-                <h1>CyberShield UK</h1>
+                <img src="images/logo.png" alt="CyberShield UK Logo">
             </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-                <a href="#login" class="btn-login">Login</a>
-                <a href="#register" class="btn-register">Register</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/onboarding" class="cta-button">Get Started</a></li>
+            </ul>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
@@ -114,6 +112,31 @@
         </div>
     </footer>
 
+    <script>
+        // Update navigation links for GitHub Pages
+        document.addEventListener('DOMContentLoaded', function() {
+            const repoName = '/cybershield-uk'; // Update this with your repository name
+            
+            // Update all navigation links
+            document.querySelectorAll('a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('/')) {
+                    link.href = repoName + href;
+                }
+            });
+
+            // Handle mobile menu
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!-- Load scripts in correct order -->
+    <script src="js/router.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

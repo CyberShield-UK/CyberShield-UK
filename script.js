@@ -1,181 +1,120 @@
-// Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
-    let isMenuLoading = false;
-
-    // Add loading state to mobile menu
-    mobileMenuBtn.addEventListener('click', async function() {
-        if (isMenuLoading) return;
-        
-        try {
-            isMenuLoading = true;
-            mobileMenuBtn.classList.add('loading');
-            
-            // Simulate a small delay for better UX
-            await new Promise(resolve => setTimeout(resolve, 100));
-            
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        } catch (error) {
-            console.error('Error toggling mobile menu:', error);
-            // Fallback to default state
-            navLinks.style.display = 'none';
-        } finally {
-            isMenuLoading = false;
-            mobileMenuBtn.classList.remove('loading');
-        }
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.navbar')) {
-            navLinks.style.display = 'none';
-        }
-    });
-
-    // Smooth scrolling for anchor links with error handling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+// Initialize the application
+function initializeApp() {
+    // Handle navigation links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const target = document.querySelector(targetId);
-            
-            if (target) {
-                try {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu after clicking a link
-                    navLinks.style.display = 'none';
-                } catch (error) {
-                    console.error('Error during smooth scroll:', error);
-                    // Fallback to instant scroll
-                    target.scrollIntoView({ block: 'start' });
-                }
-            }
+            const path = link.getAttribute('href');
+            router.navigate(path);
         });
     });
 
-    // Add scroll event listener for navbar with debouncing
-    const navbar = document.querySelector('.navbar');
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            try {
-                if (window.scrollY > 50) {
-                    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                    navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
-                } else {
-                    navbar.style.backgroundColor = '#fff';
-                    navbar.style.boxShadow = 'none';
-                }
-            } catch (error) {
-                console.error('Error updating navbar:', error);
-            }
-        }, 10);
-    });
-
-    // Add animation to service cards on scroll with error handling
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '50px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            try {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    // Unobserve after animation to improve performance
-                    observer.unobserve(entry.target);
-                }
-            } catch (error) {
-                console.error('Error animating element:', error);
-                // Fallback to visible state
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'none';
-            }
+    // Handle mobile menu
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-    }, observerOptions);
-
-    // Initialize animations with error handling
-    try {
-        document.querySelectorAll('.service-card, .feature').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(element);
-        });
-    } catch (error) {
-        console.error('Error initializing animations:', error);
     }
 
-    // Form validation
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+            navLinks.classList.remove('active');
+        }
+    });
+
+    // Initialize other components
+    initializeHeroSection();
+    initializeFeatures();
+    initializeTestimonials();
+    initializeContactForm();
+}
+
+// Initialize hero section
+function initializeHeroSection() {
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        // Add any hero section specific initialization
+    }
+}
+
+// Initialize features section
+function initializeFeatures() {
+    const features = document.querySelectorAll('.feature-card');
+    if (features) {
+        features.forEach(feature => {
+            feature.addEventListener('mouseenter', () => {
+                feature.classList.add('hover');
+            });
+            feature.addEventListener('mouseleave', () => {
+                feature.classList.remove('hover');
+            });
+        });
+    }
+}
+
+// Initialize testimonials
+function initializeTestimonials() {
+    const testimonials = document.querySelector('.testimonials');
+    if (testimonials) {
+        // Add any testimonials specific initialization
+    }
+}
+
+// Initialize contact form
+function initializeContactForm() {
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Basic form validation
-            const requiredFields = form.querySelectorAll('[required]');
-            let isValid = true;
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
             
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('error');
-                    
-                    // Add error message
-                    const errorMessage = document.createElement('div');
-                    errorMessage.className = 'error-message';
-                    errorMessage.textContent = 'This field is required';
-                    field.parentNode.appendChild(errorMessage);
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    showNotification('Message sent successfully!', 'success');
+                    contactForm.reset();
                 } else {
-                    field.classList.remove('error');
-                    const errorMessage = field.parentNode.querySelector('.error-message');
-                    if (errorMessage) {
-                        errorMessage.remove();
-                    }
+                    throw new Error('Failed to send message');
                 }
-            });
-
-            // Email validation
-            const emailFields = form.querySelectorAll('input[type="email"]');
-            emailFields.forEach(field => {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (field.value && !emailRegex.test(field.value)) {
-                    isValid = false;
-                    field.classList.add('error');
-                    
-                    const errorMessage = document.createElement('div');
-                    errorMessage.className = 'error-message';
-                    errorMessage.textContent = 'Please enter a valid email address';
-                    field.parentNode.appendChild(errorMessage);
-                }
-            });
-
-            if (isValid) {
-                // Show loading state
-                const submitButton = form.querySelector('button[type="submit"]');
-                if (submitButton) {
-                    submitButton.disabled = true;
-                    submitButton.classList.add('loading');
-                    submitButton.textContent = 'Sending...';
-                }
-
-                // Here you would typically send the form data to your server
-                // For now, we'll simulate a submission
-                setTimeout(() => {
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.classList.remove('loading');
-                        submitButton.textContent = 'Submit';
-                    }
-                }, 1500);
+            } catch (error) {
+                showNotification('Failed to send message. Please try again.', 'error');
             }
         });
-    });
-}); 
+    }
+}
+
+// Show notification
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
+
+// Initialize app when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeApp); 
