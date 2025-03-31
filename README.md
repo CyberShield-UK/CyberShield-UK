@@ -1,55 +1,27 @@
-# CyberShield UK - Managed Security Service Platform
+# CyberShield UK Website
 
-A comprehensive managed security service platform that provides automated security assessments, vulnerability management, and remediation services.
+A modern, responsive website for CyberShield UK's cybersecurity services.
 
 ## Features
 
-- **Client Onboarding Process**
-  - Business information collection
-  - Digital asset discovery
-  - Initial consultation scheduling
-  - Compliance requirements collection
-
-- **Security Assessment Platform**
-  - Automated vulnerability scanning
-  - Compliance checking
-  - Penetration testing
-  - Continuous monitoring
-
-- **Client Deliverables**
-  - Monthly executive summary reports
-  - Quarterly comprehensive security reviews
-  - Emergency alerts for critical vulnerabilities
-  - PDF report generation
-
-- **Remediation Services**
-  - Tiered service levels
-  - Guided remediation
-  - Assisted remediation
-  - Full-service remediation
-  - Premium remediation
-
-- **AI-Enhanced Capabilities**
-  - Automated vulnerability detection
-  - Customized remediation instructions
-  - Natural language report generation
-  - Predictive security risk analysis
+- Responsive design for all devices
+- Modern UI with smooth animations
+- Contact form with email integration
+- Mobile-friendly navigation
+- SEO optimized
 
 ## Prerequisites
 
-- Node.js >= 14.0.0
-- PostgreSQL >= 12.0
-- Redis >= 6.0
-- SMTP server for email notifications
-- Security scanning tools (Nessus, Qualys, etc.)
-- AI service API access
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Gmail account (for email functionality)
 
-## Installation
+## Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-org/cybershield-uk.git
-cd cybershield-uk
+git clone https://github.com/cybershield-uk/CyberShield-UK.git
+cd CyberShield-UK
 ```
 
 2. Install dependencies:
@@ -57,121 +29,65 @@ cd cybershield-uk
 npm install
 ```
 
-3. Create environment file:
+3. Create environment variables:
 ```bash
 cp .env.example .env
 ```
 
-4. Update the `.env` file with your configuration values.
+4. Update the `.env` file with your configuration:
+- Set your Gmail credentials for the contact form
+- Configure the server port if needed
 
-5. Initialize the database:
-```bash
-psql -U your_db_user -d cybershield_uk -f schema.sql
-```
+## Development
 
-## Configuration
+To run the development server:
 
-1. Database Setup:
-   - Create a PostgreSQL database
-   - Update database credentials in `.env`
-   - Run the schema.sql script
-
-2. Email Configuration:
-   - Configure SMTP settings in `.env`
-   - Test email functionality
-
-3. Security Tools:
-   - Configure API keys for security scanning tools
-   - Set up scanning schedules
-
-4. AI Service:
-   - Configure AI service endpoint and API key
-   - Test AI analysis functionality
-
-## Usage
-
-1. Start the development server:
 ```bash
 npm run dev
 ```
 
-2. Start the production server:
+The site will be available at `http://localhost:5000`
+
+## Production
+
+To build and run the production server:
+
 ```bash
+npm run build
 npm start
 ```
 
-3. Run tests:
-```bash
-npm test
+## Project Structure
+
 ```
-
-4. Run linting:
-```bash
-npm run lint
+cybershield-uk/
+├── public/              # Static files
+│   ├── css/            # Stylesheets
+│   ├── js/             # JavaScript files
+│   └── images/         # Image assets
+├── src/                # Source files
+│   ├── components/     # React components
+│   ├── pages/         # Page components
+│   └── styles/        # SCSS styles
+├── server.js          # Express server
+├── package.json       # Project dependencies
+└── README.md         # Project documentation
 ```
-
-## Security Considerations
-
-1. Environment Variables:
-   - Never commit `.env` file
-   - Use strong passwords and API keys
-   - Rotate secrets regularly
-
-2. Database Security:
-   - Use SSL for database connections
-   - Implement proper access controls
-   - Regular backups
-
-3. API Security:
-   - Rate limiting enabled
-   - JWT authentication
-   - CORS configuration
-   - Input validation
-
-4. Monitoring:
-   - Error logging
-   - Performance monitoring
-   - Security event logging
-
-## Deployment
-
-1. Production Environment:
-   - Use HTTPS
-   - Enable security headers
-   - Configure proper CORS
-   - Set up monitoring
-
-2. Database:
-   - Regular backups
-   - High availability setup
-   - Proper indexing
-
-3. Email:
-   - Configure SPF records
-   - Set up DKIM
-   - Monitor delivery rates
-
-## Support
-
-For support, please contact:
-- Email: support@cybershield-uk.com
-- Phone: +44 (0) 1234 567890
-- Hours: Monday-Friday, 9:00-17:00 GMT
-
-## License
-
-ISC License
 
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Acknowledgments
+## License
 
-- Security scanning tools
-- AI service providers
-- Open source community 
+This project is licensed under the ISC License - see the LICENSE file for details.
+
+## Contact
+
+CyberShield UK - [contact@cybershield-uk.com](mailto:contact@cybershield-uk.com)
+
+Project Link: [https://github.com/cybershield-uk/CyberShield-UK](https://github.com/cybershield-uk/CyberShield-UK) 
