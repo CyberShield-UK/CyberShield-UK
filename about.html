@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CyberShield UK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .about-container {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+        .about-hero {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .about-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-section {
+            margin-bottom: 4rem;
+        }
+        .about-section h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .about-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .about-card i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .team-member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .team-member-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .team-member-info p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        .social-links {
+            margin-top: 1rem;
+        }
+        .social-links a {
+            color: #3498db;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CyberShield UK</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-container">
+        <section class="about-hero">
+            <h1>About CyberShield UK</h1>
+            <p>Protecting businesses with cutting-edge cybersecurity solutions</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-section">
+                <h2>Our Story</h2>
+                <p>Founded in 2020, CyberShield UK has been at the forefront of cybersecurity innovation. We started with a simple mission: to make enterprise-grade security accessible to small and medium-sized businesses. Today, we're proud to serve thousands of clients across the UK, providing comprehensive security solutions that protect their digital assets.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Protect</h3>
+                        <p>Defending businesses against evolving cyber threats with advanced security solutions.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Innovate</h3>
+                        <p>Continuously developing new technologies to stay ahead of emerging threats.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Empower</h3>
+                        <p>Enabling businesses to focus on growth while we handle their security needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/300x300" alt="Team Member 1">
+                        <div class="team-member-info">
+                            <h3>John Smith</h3>
+                            <p>CEO & Founder</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/300x300" alt="Team Member 2">
+                        <div class="team-member-info">
+                            <h3>Sarah Johnson</h3>
+                            <p>Head of Security</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/300x300" alt="Team Member 3">
+                        <div class="team-member-info">
+                            <h3>Michael Brown</h3>
+                            <p>Technical Director</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CyberShield UK</h3>
+                <p>Providing managed security services to protect your business from cyber threats.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Security Street</p>
+                <p>London, UK</p>
+                <p>+44 20 1234 5678</p>
+                <p>info@cybershielduk.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberShield UK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

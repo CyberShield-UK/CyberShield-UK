@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - CyberShield UK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .pricing-container {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+        .pricing-hero {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .pricing-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .pricing-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        .pricing-card.popular {
+            border: 2px solid #3498db;
+            position: relative;
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .pricing-card h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .price {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .price span {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .features-list li:before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+        }
+        .pricing-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-align: center;
+        }
+        .pricing-btn-primary {
+            background: #3498db;
+            color: white;
+        }
+        .pricing-btn-secondary {
+            background: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        .pricing-btn:hover {
+            transform: translateY(-3px);
+        }
+        .faq-section {
+            margin-top: 4rem;
+        }
+        .faq-section h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .faq-item p {
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CyberShield UK</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pricing-container">
+        <section class="pricing-hero">
+            <h1>Choose Your Plan</h1>
+            <p>Select the perfect security solution for your business</p>
+        </section>
+
+        <section class="pricing-content">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <div class="price">£49<span>/month</span></div>
+                    <p>Perfect for small businesses</p>
+                    <ul class="features-list">
+                        <li>Basic security monitoring</li>
+                        <li>Firewall protection</li>
+                        <li>Email security</li>
+                        <li>Basic reporting</li>
+                        <li>5 protected devices</li>
+                    </ul>
+                    <a href="register.html" class="pricing-btn pricing-btn-secondary">Get Started</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <div class="price">£99<span>/month</span></div>
+                    <p>Ideal for growing businesses</p>
+                    <ul class="features-list">
+                        <li>Advanced security monitoring</li>
+                        <li>Next-gen firewall</li>
+                        <li>Email & web security</li>
+                        <li>Advanced reporting</li>
+                        <li>20 protected devices</li>
+                        <li>24/7 support</li>
+                        <li>Compliance reports</li>
+                    </ul>
+                    <a href="register.html" class="pricing-btn pricing-btn-primary">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">£199<span>/month</span></div>
+                    <p>For large organizations</p>
+                    <ul class="features-list">
+                        <li>Enterprise security monitoring</li>
+                        <li>Advanced threat protection</li>
+                        <li>Complete security suite</li>
+                        <li>Custom reporting</li>
+                        <li>Unlimited devices</li>
+                        <li>Priority 24/7 support</li>
+                        <li>Custom compliance</li>
+                        <li>Dedicated security manager</li>
+                    </ul>
+                    <a href="contact.html" class="pricing-btn pricing-btn-secondary">Contact Sales</a>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Can I change my plan later?</h3>
+                        <p>Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is there a free trial?</h3>
+                        <p>Yes, we offer a 14-day free trial for all plans. No credit card required to start.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept all major credit cards, PayPal, and bank transfers for annual plans.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CyberShield UK</h3>
+                <p>Providing managed security services to protect your business from cyber threats.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Security Street</p>
+                <p>London, UK</p>
+                <p>+44 20 1234 5678</p>
+                <p>info@cybershielduk.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberShield UK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

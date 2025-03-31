@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield UK - Remediation Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CyberShield UK</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#remediation">Remediation</a>
+                <a href="#reports">Reports</a>
+                <a href="#settings">Settings</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="remediation-dashboard">
+        <section class="dashboard-header">
+            <div class="tier-info">
+                <h2>Remediation Dashboard</h2>
+                <div class="tier-badge">
+                    <span id="current-tier">Loading...</span>
+                </div>
+            </div>
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Total Items</h3>
+                    <p id="total-items">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Completed</h3>
+                    <p id="completed-items">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>In Progress</h3>
+                    <p id="in-progress-items">0</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Critical</h3>
+                    <p id="critical-items">0</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="remediation-content">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="status-filter">Status:</label>
+                    <select id="status-filter">
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="verified">Verified</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="priority-filter">Priority:</label>
+                    <select id="priority-filter">
+                        <option value="all">All</option>
+                        <option value="critical">Critical</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search items...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="remediation-list">
+                <!-- Items will be dynamically populated here -->
+            </div>
+
+            <!-- Tier-specific features -->
+            <div id="tier-1-features" class="tier-features">
+                <h3>Guided Remediation Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-book"></i>
+                        <h4>Knowledge Base</h4>
+                        <p>Access comprehensive documentation and guides</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Support</h4>
+                        <p>Get technical clarification and guidance</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tier-2-features" class="tier-features" style="display: none;">
+                <h3>Assisted Remediation Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Dedicated Specialist</h4>
+                        <p>Work with your assigned security specialist</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-video"></i>
+                        <h4>Remote Sessions</h4>
+                        <p>Schedule screen-sharing sessions for guidance</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tier-3-features" class="tier-features" style="display: none;">
+                <h3>Managed Remediation Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Full Implementation</h4>
+                        <p>Complete handling of remediation activities</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>24/7 Support</h4>
+                        <p>Round-the-clock availability for critical issues</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tier-4-features" class="tier-features" style="display: none;">
+                <h3>Premium Remediation Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-archway"></i>
+                        <h4>Security Architecture</h4>
+                        <p>Strategic security planning and design</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Strategic Planning</h4>
+                        <p>Comprehensive security roadmapping</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CyberShield UK</h3>
+                <p>Providing managed security services to protect your business from cyber threats.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#remediation">Remediation</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Security Street</p>
+                <p>London, UK</p>
+                <p>+44 20 1234 5678</p>
+                <p>info@cybershielduk.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberShield UK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="remediation.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html> 

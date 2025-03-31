@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - CyberShield UK</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .features-container {
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+        .features-hero {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .features-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .features-content {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-category {
+            margin-bottom: 4rem;
+        }
+        .feature-category h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        .feature-item i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .feature-item h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .feature-item ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .feature-item ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .feature-item ul li:before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 4rem;
+        }
+        .cta-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .cta-section p {
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .cta-btn {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .cta-btn-primary {
+            background: #3498db;
+            color: white;
+        }
+        .cta-btn-secondary {
+            background: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CyberShield UK</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="register.html" class="btn-register">Register</a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="features-container">
+        <section class="features-hero">
+            <h1>Our Security Features</h1>
+            <p>Comprehensive cybersecurity solutions for your business</p>
+        </section>
+
+        <section class="features-content">
+            <div class="feature-category">
+                <h2>Threat Detection & Prevention</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <h3>Real-time Monitoring</h3>
+                        <p>24/7 monitoring of your systems with instant alerts for suspicious activities.</p>
+                        <ul>
+                            <li>Network traffic analysis</li>
+                            <li>Intrusion detection</li>
+                            <li>Malware scanning</li>
+                            <li>Threat intelligence</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i>
+                        <h3>Firewall Protection</h3>
+                        <p>Advanced firewall systems to protect your network perimeter.</p>
+                        <ul>
+                            <li>Stateful packet inspection</li>
+                            <li>Application control</li>
+                            <li>DDoS protection</li>
+                            <li>VPN support</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Access Control</h3>
+                        <p>Secure access management for your organization's resources.</p>
+                        <ul>
+                            <li>Multi-factor authentication</li>
+                            <li>Role-based access control</li>
+                            <li>Single sign-on</li>
+                            <li>Password management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-category">
+                <h2>Compliance & Reporting</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Security Reports</h3>
+                        <p>Detailed reports and analytics for your security posture.</p>
+                        <ul>
+                            <li>Customizable dashboards</li>
+                            <li>Real-time analytics</li>
+                            <li>Compliance reports</li>
+                            <li>Audit trails</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Compliance Management</h3>
+                        <p>Stay compliant with industry standards and regulations.</p>
+                        <ul>
+                            <li>GDPR compliance</li>
+                            <li>ISO 27001</li>
+                            <li>PCI DSS</li>
+                            <li>HIPAA compliance</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Incident Response</h3>
+                        <p>Quick and effective response to security incidents.</p>
+                        <ul>
+                            <li>24/7 incident response</li>
+                            <li>Forensic analysis</li>
+                            <li>Recovery procedures</li>
+                            <li>Post-incident review</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Ready to Secure Your Business?</h2>
+                <p>Get started with CyberShield UK today and protect your digital assets.</p>
+                <div class="cta-buttons">
+                    <a href="register.html" class="cta-btn cta-btn-primary">Start Free Trial</a>
+                    <a href="contact.html" class="cta-btn cta-btn-secondary">Contact Sales</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CyberShield UK</h3>
+                <p>Providing managed security services to protect your business from cyber threats.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Security Street</p>
+                <p>London, UK</p>
+                <p>+44 20 1234 5678</p>
+                <p>info@cybershielduk.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CyberShield UK. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
