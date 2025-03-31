@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberShield UK - Page Not Found</title>
+    <title>404 - Page Not Found | CyberShield UK</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,11 +14,11 @@
                 <img src="images/logo.png" alt="CyberShield UK Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="/CyberShield-UK/">Home</a></li>
-                <li><a href="/CyberShield-UK/services">Services</a></li>
-                <li><a href="/CyberShield-UK/about">About</a></li>
-                <li><a href="/CyberShield-UK/contact">Contact</a></li>
-                <li><a href="/CyberShield-UK/onboarding" class="cta-button">Get Started</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/onboarding" class="cta-button">Get Started</a></li>
             </ul>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -27,11 +27,14 @@
     </header>
 
     <main>
-        <div class="error-container">
-            <h1>404 - Page Not Found</h1>
-            <p>The page you're looking for doesn't exist.</p>
-            <a href="/CyberShield-UK/" class="btn">Return to Home</a>
-        </div>
+        <section class="error-section">
+            <div class="error-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h1>404 - Page Not Found</h1>
+                <p>The page you're looking for doesn't exist or has been moved.</p>
+                <a href="/" class="btn-primary">Return to Home</a>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -43,10 +46,10 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="/CyberShield-UK/">Home</a></li>
-                    <li><a href="/CyberShield-UK/about">About</a></li>
-                    <li><a href="/CyberShield-UK/services">Services</a></li>
-                    <li><a href="/CyberShield-UK/contact">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -62,9 +65,12 @@
         </div>
     </footer>
 
+    <!-- Load scripts -->
+    <script src="js/router.js"></script>
+    <script src="js/script.js"></script>
     <script>
-        // Handle mobile menu
         document.addEventListener('DOMContentLoaded', function() {
+            // Handle mobile menu
             const mobileMenu = document.querySelector('.mobile-menu');
             const navLinks = document.querySelector('.nav-links');
             

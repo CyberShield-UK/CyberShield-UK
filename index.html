@@ -14,11 +14,11 @@
                 <img src="images/logo.png" alt="CyberShield UK Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#onboarding" class="cta-button">Get Started</a></li>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/onboarding" class="cta-button">Get Started</a></li>
             </ul>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -32,8 +32,8 @@
                 <h1>Welcome to CyberShield UK</h1>
                 <p>Your comprehensive managed security service platform for small and medium-sized businesses.</p>
                 <div class="hero-buttons">
-                    <a href="#login" class="btn-primary">Login</a>
-                    <a href="#register" class="btn-secondary">Register</a>
+                    <a href="/login" class="btn-primary">Login</a>
+                    <a href="/onboarding" class="btn-secondary">Register</a>
                 </div>
             </div>
         </section>
@@ -102,10 +102,10 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -121,6 +121,9 @@
         </div>
     </footer>
 
+    <!-- Load scripts -->
+    <script src="js/router.js"></script>
+    <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Handle mobile menu
@@ -131,49 +134,15 @@
                 navLinks.classList.toggle('active');
             });
 
-            // Handle navigation
-            const sections = document.querySelectorAll('section[id]');
-            const navItems = document.querySelectorAll('.nav-links a');
-
-            function scrollToSection(sectionId) {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-
-            // Update active link on scroll
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - 60) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href').slice(1) === current) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-
-            // Handle navigation clicks
-            navItems.forEach(item => {
-                item.addEventListener('click', (e) => {
+            // Handle form submission
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    const sectionId = item.getAttribute('href').slice(1);
-                    scrollToSection(sectionId);
+                    // Add your form submission logic here
+                    alert('Thank you for your message. We will get back to you soon!');
+                    contactForm.reset();
                 });
-            });
-
-            // Handle initial hash
-            if (window.location.hash) {
-                const sectionId = window.location.hash.slice(1);
-                scrollToSection(sectionId);
             }
         });
     </script>
