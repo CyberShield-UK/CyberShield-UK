@@ -1,6 +1,6 @@
 [build]
   base = "public"
-  publish = "public"
+  publish = "."
   command = ""
 
 [[redirects]]
